@@ -1,0 +1,135 @@
+:root {
+  --cor-primaria: #007BFF;
+  --cor-secundaria: #ffffff;
+  --cor-texto: #333333;
+  --fonte-principal: 'Segoe UI', sans-serif;
+  --espacamento: 16px;
+  --borda: 1px solid #ccc;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  margin: 0;
+  padding: 0;
+  background-size: 300px;
+  color: var(--cor-texto);
+}
+
+.retangulo-superior {
+  background: linear-gradient(135deg, #0056b3, var(--cor-primaria));
+  padding: var(--espacamento);
+  color: var(--cor-secundaria);
+  position: relative;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 0;
+}
+
+.logo {
+  width: 150px;
+}
+
+/* Menu de navegação */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: var(--espacamento);
+}
+
+nav ul li a {
+  color: var(--cor-secundaria);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  border: var(--borda);
+  border-color: transparent;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  border-color: var(--cor-secundaria);
+}
+
+/* Botões do menu (visíveis só em telas pequenas) */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.open-menu,
+.close-menu {
+  width: 30px;
+  height: 30px;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/* Estilo padrão para o menu */
+.menu-navegacao {
+  display: flex;
+}
+
+/* Responsivo + toggle */
+@media (max-width: 768px) {
+  .menu-navegacao {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--cor-primaria);
+    padding: var(--espacamento);
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  #menu-toggle:checked ~ .menu-icon .open-menu {
+    display: none;
+  }
+
+  #menu-toggle:checked ~ .menu-icon .close-menu {
+    display: block;
+  }
+
+  .open-menu {
+    display: block;
+  }
+
+  .close-menu {
+    display: none;
+  }
+
+  #menu-toggle:checked ~ .menu-navegacao {
+    display: flex;
+  }
+}
+
+/* Conteúdo */
+main, section, article {
+  padding: var(--espacamento);
+  margin: var(--espacamento);
+  border: var(--borda);
+  background-color: var(--cor-secundaria);
+  border-radius: 8px;
+}
+
+/* Rodapé */
+footer {
+  background-color: var(--cor-primaria);
+  color: var(--cor-secundaria);
+  text-align: center;
+  padding: 10px;
+}
