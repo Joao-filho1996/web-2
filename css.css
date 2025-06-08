@@ -1,0 +1,146 @@
+/* estilo2.css */
+
+/* 🎨 Variáveis de cores e fontes */
+:root {
+  --color-primary: hsl(202, 92%, 40%);
+  --color-hover: hsl(0, 0%, 0%);
+  --color-divider: #444;
+  --color-object-bg: #ddd;
+  --color-text-light: white;
+  --color-background: #ffffff;
+
+  --font-title: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-body: 'Arial', sans-serif;
+}
+
+/* Tema escuro */
+[data-theme="dark"] {
+  --color-primary: #1e2a38;
+  --color-hover: #2c2c2c;
+  --color-divider: #666;
+  --color-object-bg: #2e2e2e;
+  --color-text-light: #f5f5f5;
+  --color-background: #121212;
+}
+
+/* Tema verde */
+[data-theme="green"] {
+  --color-primary: #2e7d32;
+  --color-hover: #1b5e20;
+  --color-divider: #4caf50;
+  --color-object-bg: #c8e6c9;
+  --color-text-light: #ffffff;
+  --color-background: #f0fff4;
+}
+
+/* Tema alto contraste */
+[data-theme="high-contrast"] {
+  --color-primary: #000000;
+  --color-hover: #ffffff;
+  --color-divider: #ffffff;
+  --color-object-bg: #ffff00;
+  --color-text-light: #ffffff;
+  --color-background: #000000;
+}
+
+/* Retângulo azul fixo no topo */
+.retangulo-superior {
+  background-color: var(--color-primary);
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 200px; /* largura do menu lateral */
+  right: 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  font-family: var(--font-body);
+}
+
+/* Alinhamento horizontal de logo e título */
+.topo-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--color-text-light);
+}
+
+/* Estilização da logo */
+.logo {
+  width: 60px;
+  height: auto;
+}
+
+/* Estilização do título */
+.topo-header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-family: var(--font-title);
+}
+
+/* Menu lateral */
+nav {
+  width: 200px;
+  background-color: var(--color-primary);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-family: var(--font-body);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  border-bottom: 1px solid var(--color-divider);
+}
+
+nav a {
+  display: block;
+  padding: 15px;
+  color: var(--color-text-light);
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: var(--color-hover);
+}
+
+main {
+  margin-left: 200px;
+  margin-top: 100px;
+  padding: 20px;
+  flex-grow: 1;
+  font-family: var(--font-body);
+}
+
+.objetos-tema {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.objeto {
+  background-color: var(--color-object-bg);
+  padding: 20px;
+  text-align: center;
+}
+
+footer {
+  width: 100%;
+  padding: 20px;
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-body);
+}

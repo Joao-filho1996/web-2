@@ -2,52 +2,77 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Ocúlos do JB</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Óculos de Sol JB</title>
+  <link rel="stylesheet" href="css.css">
 </head>
-<body>
 
+<body data-theme="dark">
+
+  <!-- Retângulo Azul com Logo e Título -->
   <div class="retangulo-superior">
-    <header>
-      <h1>Ocúlos de Sol JB</h1>
+    <div class="topo-header">
       <img src="imagens/logo.png" alt="Logo" class="logo">
-         
-      <!-- Botões de menu -->
-      <input type="checkbox" id="menu-toggle" />
-      <label for="menu-toggle" class="menu-icon">
-        <img src="imagens/menu.svg" alt="Abrir menu" class="open-menu">
-        <img src="imagens/close.svg" alt="Fechar menu" class="close-menu">
-      </label>
-
-      <!-- Navegação -->
-      <nav class="menu-navegacao">
-        <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="detalhes.html">Detalhes</a></li>
-          <li><a href="autor.html">Sobre o Autor</a></li>
-          <li><a href="admin-usuario.html">Administração</a></li>
-        </ul>
-      </nav>
-    </header>
+      <h1>Óculos de Sol JB</h1>
+    </div>
   </div>
+<div class="tema-selector" style="position: fixed; top: 80px; right: 20px; z-index: 2000;">
+  <label for="temaSelect" style="color: var(--color-text-light); font-family: var(--font-body);">Tema:</label>
+  <select id="temaSelect">
+    <option value="">Claro</option>
+    <option value="dark">Escuro</option>
+    <option value="green">Verde</option>
+    <option value="high-contrast">Alto Contraste</option>
+  </select>
+</div>
 
+  <!-- Ícone do Menu Hamburguer (responsivo) -->
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="menu-icon">
+    <img src="imagens/menu.svg" alt="Abrir menu" class="open-menu">
+    <img src="imagens/close.svg" alt="Fechar menu" class="close-menu">
+  </label>
+
+  <!-- Menu de Navegação Lateral -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="detalhes.html">Detalhes</a></li>
+      <li><a href="autor.html">Sobre o Autor</a></li>
+      <li><a href="admin-usuario.html">Administração</a></li>
+    </ul>
+  </nav>
+
+  <!-- Conteúdo Principal -->
   <main>
     <section>
       <h2>Objetos em Destaque</h2>
-      <article>
-        <h3>Coleção de Autoperformance</h3>
-        <img src="imagens/oculos.jpg" alt="Objeto 1" width="250">
-      </article>
-      <article>
-        <h3>Coleção de Verão</h3>
-        <img src="imagens/verao.jpg" alt="Objeto 2" width="250">
-      </article>
+      <div class="objetos-tema">
+        <article class="objeto">
+          <h3>Coleção de Autoperformance</h3>
+          <img src="imagens/oculos.jpg" alt="Objeto 1" width="250">
+        </article>
+        <article class="objeto">
+          <h3>Coleção de Verão</h3>
+          <img src="imagens/verao.jpg" alt="Objeto 2" width="250">
+        </article>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>Desenvolvido por João Francisco Peixoto de Araújo - <a href="#">Sobre o Autor</a></p>
-  </footer>
+  <!-- Rodapé -->
+  <footer class="footer-azul">
+    <p>Desenvolvido por João Francisco Peixoto de Araújo - 
+      <a href="autor.html">Sobre Autor
+        <script>
+  const selectTema = document.getElementById('temaSelect');
 
-</body>
-</html>
+  selectTema.addEventListener('change', function () {
+    const temaSelecionado = this.value;
+    if (temaSelecionado) {
+      document.body.setAttribute('data-theme', temaSelecionado);
+    } else {
+      document.body.removeAttribute('data-theme'); // volta ao padrão
+    }
+  });
+</script>
+

@@ -88,8 +88,9 @@ nav ul li a:hover {
     display: none;
     flex-direction: column;
     width: 100%;
-    background-color: var(--cor-primaria);
-    padding: var(--espacamento);
+    background-color:  hsl(0, 0%, 1%); /* <--- ALTERAÇÃO AQUI */
+    padding-top: var(20);
+    padding-bottom: var(20);
   }
 
   .menu-icon {
@@ -116,6 +117,7 @@ nav ul li a:hover {
     display: flex;
   }
 }
+
 
 /* Conteúdo */
 main, section, article {
